@@ -1,0 +1,31 @@
+spring.datasource.url: jdbc:postgresql://localhost:15432/
+spring.datasource.username: postgres
+spring.datasource.password: postgres
+
+spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto: update
+
+
+distributed-caching.should-create-person: true
+
+# Enable the logging for org.hibernate.cache
+logging.level.org.hibernate.cache: debug
+
+# Show the queries that spring data generates
+spring.jpa.show-sql: true
+
+# ???
+spring.jpa.properties.javax.persistence.sharedCache.mode: ENABLE_SELECTIVE
+#spring.jpa.properties.hibernate.javax.cache.provider: com.hazelcast.cache.impl.HazelcastServerCachingProvider
+#spring.jpa.properties.hibernate.javax.cache.uri: hazelcast.xml
+
+# Format the sql that Hibernate generates
+spring.jpa.properties.hibernate.format_sql: true
+
+# Show statistics for the database call
+#spring.jpa.properties.hibernate.generate_statistics: true
+
+
+spring.jpa.properties.hibernate.cache.use_second_level_cache: true
+spring.jpa.properties.hibernate.cache.use_query_cache: true
+spring.jpa.properties.hibernate.cache.region.factory_class: jcache
